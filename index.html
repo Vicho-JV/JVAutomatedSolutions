@@ -9,43 +9,83 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
+            color: #333;
         }
         header {
-            background-color: #333;
+            background-color: #343a40;
             color: white;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
+            font-size: 24px;
+            font-weight: bold;
         }
         nav {
             display: flex;
-            justify-content: space-around;
-            background-color: #444;
-            padding: 10px;
+            justify-content: center;
+            background-color: #495057;
+            padding: 15px;
         }
         nav a {
             color: white;
             text-decoration: none;
-            padding: 8px 16px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
-        section {
-            padding: 20px;
+        nav a:hover {
+            background: #6c757d;
+        }
+        .main-section {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            background: white;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background: url('your-image.jpg') no-repeat center center/cover;
+            color: white;
+        }
+        .main-section h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .main-section p {
+            font-size: 20px;
+            max-width: 800px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 50px 0;
+        }
+        .section {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .footer {
+            background: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
         .language-switch {
             position: absolute;
             top: 15px;
             right: 15px;
+            padding: 10px;
+            background: #ffc107;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>AI Поддръжка за Бизнеса</h1>
+        AI Поддръжка за Бизнеса
         <button class="language-switch" onclick="switchLanguage()">English</button>
     </header>
     <nav>
@@ -53,26 +93,34 @@
         <a href="#services">Услуги</a>
         <a href="#contact">Контакт</a>
     </nav>
-    <section id="about">
-        <h2>За Нас</h2>
-        <p>Тук ще бъде вашият текст.</p>
+    <section class="main-section">
+        <h1>Вашият AI помощник за бизнеса</h1>
+        <p>Автоматизирайте клиентската си поддръжка и подобрете ефективността на вашата компания.</p>
     </section>
-    <section id="services">
-        <h2>Услуги</h2>
-        <p>Тук ще бъде вашият текст.</p>
-    </section>
-    <section id="contact">
-        <h2>Контакт</h2>
-        <p>Тук ще бъде вашият текст.</p>
-    </section>
-
+    <div class="container">
+        <section id="about" class="section">
+            <h2>За Нас</h2>
+            <p>Тук ще бъде вашият текст.</p>
+        </section>
+        <section id="services" class="section">
+            <h2>Услуги</h2>
+            <p>Тук ще бъде вашият текст.</p>
+        </section>
+        <section id="contact" class="section">
+            <h2>Контакт</h2>
+            <p>Тук ще бъде вашият текст.</p>
+        </section>
+    </div>
+    <footer class="footer">
+        &copy; 2025 AI Поддръжка за Бизнеса - Всички права запазени.
+    </footer>
     <script>
         function switchLanguage() {
             let lang = document.documentElement.lang;
             if (lang === "bg") {
                 document.documentElement.lang = "en";
                 document.title = "AI Support for Business";
-                document.querySelector("h1").textContent = "AI Support for Business";
+                document.querySelector("header").textContent = "AI Support for Business";
                 document.querySelectorAll("nav a")[0].textContent = "About Us";
                 document.querySelectorAll("nav a")[1].textContent = "Services";
                 document.querySelectorAll("nav a")[2].textContent = "Contact";
@@ -83,7 +131,7 @@
             } else {
                 document.documentElement.lang = "bg";
                 document.title = "AI Поддръжка за Бизнеса";
-                document.querySelector("h1").textContent = "AI Поддръжка за Бизнеса";
+                document.querySelector("header").textContent = "AI Поддръжка за Бизнеса";
                 document.querySelectorAll("nav a")[0].textContent = "За Нас";
                 document.querySelectorAll("nav a")[1].textContent = "Услуги";
                 document.querySelectorAll("nav a")[2].textContent = "Контакт";
