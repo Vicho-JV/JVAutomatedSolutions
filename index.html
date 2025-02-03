@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Поддръжка за Бизнеса</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+            background: white;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .language-switch {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI Поддръжка за Бизнеса</h1>
+        <button class="language-switch" onclick="switchLanguage()">English</button>
+    </header>
+    <nav>
+        <a href="#about">За Нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#contact">Контакт</a>
+    </nav>
+    <section id="about">
+        <h2>За Нас</h2>
+        <p>Тук ще бъде вашият текст.</p>
+    </section>
+    <section id="services">
+        <h2>Услуги</h2>
+        <p>Тук ще бъде вашият текст.</p>
+    </section>
+    <section id="contact">
+        <h2>Контакт</h2>
+        <p>Тук ще бъде вашият текст.</p>
+    </section>
+
+    <script>
+        function switchLanguage() {
+            let lang = document.documentElement.lang;
+            if (lang === "bg") {
+                document.documentElement.lang = "en";
+                document.title = "AI Support for Business";
+                document.querySelector("h1").textContent = "AI Support for Business";
+                document.querySelectorAll("nav a")[0].textContent = "About Us";
+                document.querySelectorAll("nav a")[1].textContent = "Services";
+                document.querySelectorAll("nav a")[2].textContent = "Contact";
+                document.querySelector("#about h2").textContent = "About Us";
+                document.querySelector("#services h2").textContent = "Services";
+                document.querySelector("#contact h2").textContent = "Contact";
+                document.querySelector(".language-switch").textContent = "Български";
+            } else {
+                document.documentElement.lang = "bg";
+                document.title = "AI Поддръжка за Бизнеса";
+                document.querySelector("h1").textContent = "AI Поддръжка за Бизнеса";
+                document.querySelectorAll("nav a")[0].textContent = "За Нас";
+                document.querySelectorAll("nav a")[1].textContent = "Услуги";
+                document.querySelectorAll("nav a")[2].textContent = "Контакт";
+                document.querySelector("#about h2").textContent = "За Нас";
+                document.querySelector("#services h2").textContent = "Услуги";
+                document.querySelector("#contact h2").textContent = "Контакт";
+                document.querySelector(".language-switch").textContent = "English";
+            }
+        }
+    </script>
+</body>
+</html>
