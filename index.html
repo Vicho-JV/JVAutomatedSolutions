@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Support Solutions</title>
+    <title>AI Поддръжка</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
@@ -34,11 +34,18 @@
             font-weight: bold;
         }
         .language-switch {
-            background: #ffc107;
+            display: flex;
+            align-items: center;
+        }
+        .language-switch button {
+            background: none;
             border: none;
-            padding: 10px;
-            border-radius: 5px;
             cursor: pointer;
+            margin-left: 10px;
+        }
+        .language-switch img {
+            width: 30px;
+            height: 20px;
         }
         nav {
             display: flex;
@@ -51,7 +58,6 @@
             color: white;
             text-decoration: none;
             padding: 12px 20px;
-            margin: 0 15px;
             font-size: 18px;
             transition: color 0.3s;
         }
@@ -69,16 +75,6 @@
             color: white;
             padding: 40px;
         }
-        .hero h1 {
-            font-size: 50px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-        .hero p {
-            font-size: 22px;
-            max-width: 800px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
         .cta {
             background: #ffc107;
             color: #222;
@@ -92,15 +88,6 @@
         .cta:hover {
             background: #e0a800;
         }
-        .section {
-            padding: 80px 20px;
-            background: white;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            text-align: center;
-        }
         .footer {
             background: #222;
             color: white;
@@ -111,35 +98,57 @@
 </head>
 <body>
     <header>
-        <div class="logo">AI Support Solutions</div>
-        <button class="language-switch" onclick="switchLanguage()">English</button>
+        <div class="logo">AI Поддръжка</div>
+        <div class="language-switch">
+            <button onclick="switchLanguage('bg')"><img src="bulgaria-flag.png" alt="BG"></button>
+            <button onclick="switchLanguage('en')"><img src="uk-flag.png" alt="EN"></button>
+        </div>
     </header>
     <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="#services" class="cta">Научете повече</a>
     </nav>
     <section class="hero">
-        <h1>Revolutionizing AI-Powered Customer Support</h1>
-        <p>Enhance customer engagement and automate support with cutting-edge AI.</p>
-        <a href="#services" class="cta">Learn More</a>
+        <h1>Революция в AI клиентската поддръжка</h1>
+        <p>Подобрете ангажираността на клиентите и автоматизирайте поддръжката с водещ AI.</p>
     </section>
     <div class="container">
         <section id="about" class="section">
-            <h2>About Us</h2>
-            <p>We provide AI-powered solutions for businesses to improve customer interactions and efficiency.</p>
+            <h2>За Нас</h2>
+            <p>Ние предоставяме AI решения за бизнеси, които искат да подобрят взаимодействието с клиентите.</p>
         </section>
         <section id="services" class="section">
-            <h2>Our Services</h2>
-            <p>AI Chatbots, Automated Customer Support, Machine Learning Analytics, and more.</p>
+            <h2>Нашите Услуги</h2>
+            <p>AI чатботове, автоматизирана клиентска поддръжка, машинно обучение и още.</p>
         </section>
         <section id="contact" class="section">
-            <h2>Contact Us</h2>
-            <p>Reach out to us for customized AI solutions tailored to your business.</p>
+            <h2>Контакти</h2>
+            <p>Свържете се с нас за персонализирани AI решения за вашия бизнес.</p>
         </section>
     </div>
     <footer class="footer">
-        &copy; 2025 AI Support Solutions - All Rights Reserved.
+        &copy; 2025 AI Поддръжка - Всички права запазени.
     </footer>
+    <script>
+        function switchLanguage(lang) {
+            document.documentElement.lang = lang;
+            if (lang === 'en') {
+                document.querySelector(".logo").textContent = "AI Support";
+                document.querySelector(".cta").textContent = "Learn More";
+                document.querySelector(".hero h1").textContent = "Revolutionizing AI-Powered Customer Support";
+                document.querySelector(".hero p").textContent = "Enhance customer engagement and automate support with cutting-edge AI.";
+                document.querySelector("#about h2").textContent = "About Us";
+                document.querySelector("#services h2").textContent = "Our Services";
+                document.querySelector("#contact h2").textContent = "Contact Us";
+            } else {
+                document.querySelector(".logo").textContent = "AI Поддръжка";
+                document.querySelector(".cta").textContent = "Научете повече";
+                document.querySelector(".hero h1").textContent = "Революция в AI клиентската поддръжка";
+                document.querySelector(".hero p").textContent = "Подобрете ангажираността на клиентите и автоматизирайте поддръжката с водещ AI.";
+                document.querySelector("#about h2").textContent = "За Нас";
+                document.querySelector("#services h2").textContent = "Нашите Услуги";
+                document.querySelector("#contact h2").textContent = "Контакти";
+            }
+        }
+    </script>
 </body>
 </html>
