@@ -3,27 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Поддръж ка за Бизнеса</title>
+    <title>AI Поддръжка за Бизнеса</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            background-color: #f0f2f5;
             color: #333;
         }
         header {
-            background-color: #343a40;
+            background: linear-gradient(to right, #007bff, #6610f2);
             color: white;
             padding: 20px;
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
+            position: relative;
+        }
+        .language-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background: #ffc107;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #495057;
+            background-color: #343a40;
             padding: 15px;
         }
         nav a {
@@ -36,9 +47,9 @@
             transition: background 0.3s;
         }
         nav a:hover {
-            background: #6c757d;
+            background: #495057;
         }
-        .main-section {
+        .hero {
             height: 90vh;
             display: flex;
             flex-direction: column;
@@ -47,14 +58,17 @@
             text-align: center;
             background: url('your-image.jpg') no-repeat center center/cover;
             color: white;
+            padding: 40px;
         }
-        .main-section h1 {
+        .hero h1 {
             font-size: 50px;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
-        .main-section p {
-            font-size: 20px;
+        .hero p {
+            font-size: 22px;
             max-width: 800px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         .container {
             width: 80%;
@@ -63,23 +77,17 @@
         }
         .section {
             text-align: center;
-            padding: 50px 0;
+            padding: 80px 20px;
+            background: white;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
         .footer {
             background: #343a40;
             color: white;
             text-align: center;
             padding: 20px;
-        }
-        .language-switch {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            padding: 10px;
-            background: #ffc107;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
         }
     </style>
 </head>
@@ -93,7 +101,7 @@
         <a href="#services">Услуги</a>
         <a href="#contact">Контакт</a>
     </nav>
-    <section class="main-section">
+    <section class="hero">
         <h1>Вашият AI помощник за бизнеса</h1>
         <p>Автоматизирайте клиентската си поддръжка и подобрете ефективността на вашата компания.</p>
     </section>
@@ -114,33 +122,5 @@
     <footer class="footer">
         &copy; 2025 AI Поддръжка за Бизнеса - Всички права запазени.
     </footer>
-    <script>
-        function switchLanguage() {
-            let lang = document.documentElement.lang;
-            if (lang === "bg") {
-                document.documentElement.lang = "en";
-                document.title = "AI Support for Business";
-                document.querySelector("header").textContent = "AI Support for Business";
-                document.querySelectorAll("nav a")[0].textContent = "About Us";
-                document.querySelectorAll("nav a")[1].textContent = "Services";
-                document.querySelectorAll("nav a")[2].textContent = "Contact";
-                document.querySelector("#about h2").textContent = "About Us";
-                document.querySelector("#services h2").textContent = "Services";
-                document.querySelector("#contact h2").textContent = "Contact";
-                document.querySelector(".language-switch").textContent = "Български";
-            } else {
-                document.documentElement.lang = "bg";
-                document.title = "AI Поддръжка за Бизнеса";
-                document.querySelector("header").textContent = "AI Поддръжка за Бизнеса";
-                document.querySelectorAll("nav a")[0].textContent = "За Нас";
-                document.querySelectorAll("nav a")[1].textContent = "Услуги";
-                document.querySelectorAll("nav a")[2].textContent = "Контакт";
-                document.querySelector("#about h2").textContent = "За Нас";
-                document.querySelector("#services h2").textContent = "Услуги";
-                document.querySelector("#contact h2").textContent = "Контакт";
-                document.querySelector(".language-switch").textContent = "English";
-            }
-        }
-    </script>
 </body>
 </html>
